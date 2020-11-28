@@ -21,10 +21,11 @@ def incoming():
     except requests.exceptions.HTTPError as err:
         print(err)
         resp = jsonify(success=False)
+        resp.status_code = result.status_code
     else:
         print("Payload delivered successfully, code {}.".format(result.status_code))
         resp = jsonify(success=True)
-    resp.status_code = result.status_code
+        resp.status_code = 200
     return resp 
 
 http_server = WSGIServer(('0.0.0.0', PORT), app)
