@@ -64,6 +64,6 @@ See [Discord documentation](https://support.discord.com/hc/en-us/articles/228383
 
 Now give Keel your bridge url, ex: `your.docker.server:5000/v1/incoming`
 
-Or in with Kubernetes using the internal DNS `http://discord-keel-bridge.keel.svc.cluster.k8s:5000/v1/incoming` depending on your `keel` namespace.
+Or with Kubernetes using the internal DNS `http://discord-keel-bridge.keel.svc.cluster.k8s:5000/v1/incoming` depending on your `keel` namespace.
 
-**Note**: If you use the default `cluster.local` domain, Keel will fail to send the notification as Go's http module has issues with the  .local. Either use another domain or and ingress.
+**Note**: If you use the default `cluster.local` domain, Keel will fail to send the notification as Go's http module has issues with the  .local domain. Either use another domain or an ingress.
